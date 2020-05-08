@@ -278,8 +278,7 @@ a:hover {
 
   z-index: 10;
 
-  -webkit-animation: fadeOut 10s;
-  animation: fadeOut 10s;
+  animation: fadeOut 1s;
   animation-fill-mode: forwards;
   animation-delay: 1s;
 
@@ -287,11 +286,7 @@ a:hover {
 }
 
 
-@-webkit-keyframes fadeOut {
-  0% {opacity: 1;}
-  99% {opacity: 0.01; width:100%; height:100%;}
-  100% {opacity: 0; width: 0; height: 0;}
-}
+
 @keyframes fadeOut {
   0% {opacity: 1;}
   99% {opacity: 0.01; width:100%; height:100%;}
@@ -399,6 +394,10 @@ a:hover {
 
 .font-tertiary {
   font-family: bwnistaint-xbd !important
+}
+
+.font-autoscale-header {
+  
 }
 
 .shadow {
@@ -517,14 +516,14 @@ textarea.form-control {
 }
 
 .hero-area {
-  padding: 250px 0 200px;
+  padding: 150px 0px 0px 0px;
   position: relative
 
 }
 
 @media(max-width:767px) {
   .hero-area {
-    padding: 200px 0 150px;
+    padding: 50px 0px 0px 0px 0px;
     overflow: hidden
   }
 }
