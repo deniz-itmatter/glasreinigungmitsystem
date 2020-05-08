@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Portfolio on Kross | Hugo Portfolio Template</title>
-    <link>http://examplesite.com/portfolio/</link>
+    <link>https://deniz-itmatter.github.io/glasreinigungmitsystem/portfolio/</link>
     <description>Recent content in Portfolio on Kross | Hugo Portfolio Template</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     
-	<atom:link href="http://examplesite.com/portfolio/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://deniz-itmatter.github.io/glasreinigungmitsystem/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
