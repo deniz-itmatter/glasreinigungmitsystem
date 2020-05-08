@@ -4,7 +4,7 @@ publishDir = "docs"
 languageCode = "de-de"
 summaryLength = "10"
 theme = "kross-hugo"
-title = "Kross | Hugo Portfolio Template"
+title = "Glasreinigung mit System"
 
 # css plugins
 [[params.plugins.css]]
@@ -28,24 +28,15 @@ URL = "plugins/shuffle/shuffle.min.js"
 
 # menu
 [[menu.main]]
-URL = "about"
-name = "About"
+URL = "ueber-uns"
+name = "Über Uns"
 weight = 2
 
 [[menu.main]]
-URL = "blog"
-name = "Blog"
+URL = "leistungen"
+name = "Leistungen"
 weight = 3
 
-[[menu.main]]
-URL = "portfolio"
-name = "Portfolio"
-weight = 4
-
-[[menu.main]]
-URL = "contact"
-name = "Contact"
-weight = 5
 
 
 # default parameters
@@ -53,14 +44,13 @@ weight = 5
 home = "Home"
 logo = "images/logo.png"
 # theme color
-theme_color = "#41228e"
+theme_color = "#301A28"
 # contact info
-phone = "+880 2544 658 256"
-email = "steve.fruits@email.com"
-address = "125/A, CA Commercial Area, California, USA"
+phone = "0172 58 12 60 1"
+email = "service@glasreinigungmitsystem.de"
 # meta description
-author = "Johnathan Smith"
-description = "This is meta description"
+author = "Jörg Wermuth"
+description = "Professionelle Glasreinigung für Privatkunden für Haus, Wohnung und Wintergarten sowie Gewebekunden in Hannover und Umland Hannover."
 # google analytics
 google_analytics_id = "" # Your ID
 # copyright
