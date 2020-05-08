@@ -1,5 +1,5 @@
 # default configuration
-baseURL = "http://examplesite.com"
+baseURL = "https://deniz-itmatter.github.io/glasreinigungmitsystem/"
 publishDir = "docs"
 languageCode = "de-de"
 summaryLength = "10"
