@@ -1,5 +1,6 @@
 # default configuration
 baseURL = "http://examplesite.com"
+publishDir = "docs"
 languageCode = "de-de"
 summaryLength = "10"
 theme = "kross-hugo"
