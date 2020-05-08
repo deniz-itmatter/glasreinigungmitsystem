@@ -54,7 +54,7 @@ description = "Professionelle Glasreinigung für Privatkunden für Haus, Wohnung
 # google analytics
 google_analytics_id = "" # Your ID
 # copyright
-copyright = "Copyright &copy; 2020 a theme by [gethugothemes](https://gethugothemes.com)"
+copyright = "Copyright &copy; 2020 | Alle Rechte vorbehalten | by [IT Matter](https://it-matter.de)"
 
 
 # contact
@@ -65,7 +65,7 @@ form_action = "#" # contact form works with : https://formspree.io
 # preloader
 [params.preloader]
 enable = true
-preloader = "" # use png, jpg, svg or gif format
+preloader = "" # use png, jpg, svg or gif format    
 
 # social site
 [[params.social]]

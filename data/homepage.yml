@@ -1,6 +1,8 @@
 # banner
 banner:
-  title : "Hi! I’m <br> Christoher <br> UX designer"
+  title : "WIR<br>LASSEN<br>DIE<br>SONNE<br>REIN"
+  backgroundClean : "images/header/cleaned_header.jpg"
+  backgroundDirty : "images/header/dirty_header.jpg"
 
 # about
 about:
