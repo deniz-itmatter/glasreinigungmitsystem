@@ -2,20 +2,14 @@
 
   <!-- hero area -->
   <section class="hero-area head-trans overflow-hidden" id="parallax">
-    <div class="container">
+    <div class="container slogan-box">
       <div class="row">
         <div class="col-lg-11 mx-auto">
           <h1 class="text-white font-tertiary font-autoscale-header">{{ .Site.Data.homepage.banner.title | safeHTML }}</h1>
         </div>
       </div>
     </div>
-    <!-- social icon -->
-    <ul class="list-unstyled ml-5 mt-3 position-relative zindex-1">
-      {{ range .Site.Params.social }}
-      <li class="mb-3"><a class="text-white" href="{{.URL | safeURL }}"><i class="{{.icon}}"></i></a></li>
-      {{ end }}
-    </ul>
-    <!-- /social icon -->
+    
   </section>
   <!-- /hero area -->
 
