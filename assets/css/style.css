@@ -13,7 +13,7 @@ VERSION: Versoin Number
 }
 
 body {
-  line-height: 1.2;
+  line-height: 1;
   font-family: roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 15px;
@@ -84,10 +84,12 @@ h6,
 .h6 {
   font-size: 14px
 }
-
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
 .btn {
   font-size: 22px;
-  font-family: playfair display, serif;
+  font-family: roboto, sans-serif;
   text-transform: capitalize;
   padding: 16px 44px;
   border-radius: 5px;
@@ -117,9 +119,17 @@ h6,
   font-size: 15px
 }
 
+.btn-secondary {
+  background: #25C064;
+  color: #fff;
+  border-radius: 50px;
+  line-height: 1em;
+}
 .btn-primary {
-  background: var(--primary-color);
-  color: #fff
+  background: #DB4C40;
+  color: #fff;
+  border-radius: 50px;
+  line-height: 1em;
 }
 
 .btn-primary.active {
@@ -223,7 +233,16 @@ a:hover {
 
 .section-title {
   margin-bottom: 80px;
-  font-family: bwnistaint-xbd
+  font-family: bwnistaint-xbd;
+  color: #5BC0EB;
+}
+
+.section-text {
+  text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 17px;
+    margin-top: -40px !important;
 }
 
 .bg-cover {
@@ -262,6 +281,43 @@ a:hover {
   /*background: var(--primary-color) !important*/
 
 }
+.btnli {
+  position: absolute !important;
+  right: 0;
+}
+
+.mobile-tel-btn {
+    display: none;
+}
+@media(max-width:991px) {
+  .btnli {
+    display: none;
+  }
+  .mobile-tel-btn {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 99999;
+  }
+  .mobile-tel-btn button {
+    width: 100%;
+    float: right;
+  }
+}
+
+
+.notransition {
+  opacity: 1 !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+
+  animation: none!important;
+}
+
 
 .head-trans::before {
   content:"";
@@ -278,7 +334,7 @@ a:hover {
 
   z-index: 10;
 
-  animation: fadeOut 1s;
+  animation: fadeOut 4s;
   animation-fill-mode: forwards;
   animation-delay: 1s;
 
@@ -287,15 +343,26 @@ a:hover {
 
 
 
+
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
 @keyframes fadeOut {
   0% {opacity: 1;}
   99% {opacity: 0.01; width:100%; height:100%;}
   100% {opacity: 0; width: 0; height: 0;}
 }
 
-@keyframes buildFromTop {
-  0% {height:0px;}
-  100% {height: 1130px;}
+@keyframes buildFromBottom {
+  0% {opacity: 0; transform: translatey(-100%);}
+  100% {opacity: 1; transform: translatey(0%);}
+}
+
+@keyframes buildFromBottomSkew {
+  0% {opacity: 0; transform: skewx(12deg) translatey(-100%);}
+  100% {opacity: .85; transform: skewx(12deg) translatey(0%);}
 }
 
 .head-trans::after {
@@ -414,15 +481,16 @@ a:hover {
   top:0;
   left:0;
   width: 55vw;
-  height: 0px;
-  transform: skew(12deg);
+  height: 100%;
+  transform: skew(12deg) translatey(-100%);
+
   background: var(--primary-color);
-  opacity: 0.85;
+  opacity: 0;
   z-index: 1;
 
-  animation: buildFromTop 0.2s cubic-bezier(0.37, 0.03, 0.82, 0.24);
+  animation: buildFromBottomSkew .4s ease-in;
   animation-fill-mode: forwards;
-  animation-delay: 2s;
+  animation-delay: 2.5s;
 
 
 }
@@ -507,12 +575,27 @@ textarea.form-control {
   border: 0
 }
 
+.card-img-top {
+  height: 250px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.cars-text {
+  height: 150px;
+  overflow: hidden;
+}
 
 
 
 .navigation {
   padding: 10px 40px;
-  transition: .3s ease
+  opacity: 0;
+  transition: .3s ease;
+  animation: buildFromBottom .5s ease-in;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+
 }
 
 .navigation.nav-bg {
@@ -549,25 +632,34 @@ textarea.form-control {
 
 .hero-area {
   padding: 125px 0px 25px 0px;
-  position: relative
+  position: relative;
+  overflow: visible;
 
 }
 
-@media(max-width:767px) {
+@media(max-width:991px) {
   .hero-area {
-    padding: 50px 0px 0px 0px 0px;
+    padding: 160px 0px 25px 0px;
     overflow: hidden
+  }
+  .counter-row {
+    display: none;
   }
 }
 
 .hero-area h1 {
   position: relative;
-  z-index: 2
+  z-index: 2;
+  opacity: 0;
+  animation: buildFromBottom .4s ease-in;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+
 }
 
 .layer {
   position: absolute;
-  z-index: 1
+  z-index: 1;
 }
 
 #l1 {
@@ -646,6 +738,8 @@ textarea.form-control {
   animation: rotate 6s linear infinite;
   z-index: 10
 }
+
+
 
 .wave::after {
   border-radius: 47%;
@@ -790,6 +884,19 @@ textarea.form-control {
   position: absolute;
   right: 200px;
   bottom: -50px
+}
+
+.subline {
+  background: var(--primary-color);
+  color: #fff !important;
+}
+
+.subline a {
+  color: #fff;
+}
+
+.subline a:nth-child(1) {
+  color: black;
 }
 
 .footer-section {
@@ -967,11 +1074,201 @@ blockquote {
 }
 
 .filter-controls li.active {
-  font-weight: 700
+  font-weight: 700;
 }
 
 
 
+.nopadding {
+  padding: 0 !important;
+}
 
-/* Auto Animate Features*/
+.col-1-3 {
+  width: 33.3333%;
+}
 
+.col2-3 {
+  width: 66.6666%;
+}
+
+.fullwidth-img {
+  width: 100%;
+}
+
+.counter-row {
+  width: 100%;
+  background-color: var(--primary-color) !important;
+  color: white;
+  margin: 0 !important;
+  text-align: center;
+  padding: 50px 0;
+}
+.counter-row p{
+  color: #fff;
+  margin: 0;
+  font-weight: 800;
+  line-height: 1em;
+}
+
+.counter-number {
+  font-size: 80px !important;
+}
+.counter-text {
+  font-size: 15px;
+}
+
+.counter-section {
+  padding-bottom: 0;
+}
+.services-section {
+  width: 100%;
+  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.2);
+  padding: 120px 0;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.services-section h2 {
+  margin: 0;
+}
+.services-section p {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 40px auto !important;
+}
+
+
+.services-section button {
+  margin: 0 auto;
+  display: block;
+}
+
+.services-content {
+  padding: 100px 0;
+}
+
+
+.termin-title {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-family: bwnistaint-xbd;
+  margin-bottom: 100px;
+
+}
+
+
+.green-word {
+  color: #25C064;
+}
+
+.termin-section {
+  padding-right: 5%;
+  padding-left: 5%;
+  background-size: cover !important;
+  background-position: center;
+  box-shadow:inset 0 0 0 2000px rgba(48, 26, 40, 0.2);
+}
+
+.termin-form, .termin-aside {
+  width: 50%;
+  display: inline-block;
+  padding: 0 1%;
+  vertical-align: top;
+}
+
+.termin-aside {
+  padding-left: 50px;
+}
+
+.termin-form input, .termin-form textarea {
+  border-radius: 50px;
+
+
+}
+.termin-form div {
+  display: inline-block !important;
+  padding:0;
+}
+.termin-form button {
+  margin-top: 25px;
+}
+.termin-aside-text {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+.form-text {
+  color: #fff;
+  font-weight: 600;
+}
+
+
+.termin-form .col-md-6 {
+  max-width: 49.55%;
+}
+
+.px-0 {
+  padding-left: 25px !important;
+}
+
+#message.px-0 {
+  padding-top: 20px !important;
+}
+
+
+.termin-telbtn1-3, .termin-telbtn2-3{
+  overflow: hidden;
+  text-transform: lowercase;
+  padding: 5px 20px;
+  font-size: 18px;
+  font-weight: 400;
+
+}
+.termin-telbtn1-3 {
+  width: 33%;
+  background-color: rgba(37, 192, 100,0.8);
+  color: var(--primary-color);
+}
+.termin-telbtn2-3 {
+  width: 66%;
+  background-color: rgba(219, 76, 64,0.8);
+  color: white;
+}
+
+.termin-telbtn1-3:hover{
+  background-color:rgb(37, 192, 100);
+  font-weight: 700;
+  transform: scale(1.2);
+  z-index: 9999;
+}
+
+.termin-telbtn2-3:hover{
+  background-color:rgb(219, 76, 64);
+  font-weight: 700;
+  transform: scale(1.2);
+  z-index: 9999;
+}
+
+@media(max-width:991px) {
+  .termin-form {
+    width: 100% !important;
+    padding: 0;
+    padding-bottom: 50px;
+  }
+  .termin-section {
+    text-align: center;
+  }
+  .termin-aside {
+    padding: 0;
+    width: 100%;
+  }
+
+}

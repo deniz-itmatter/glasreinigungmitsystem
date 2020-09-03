@@ -1,0 +1,66 @@
+{{ if .Site.Params.contact.enable }}
+<!-- contact -->
+<section class="section termin-section" id="kontakt" style="background-image: url('{{`images/homepage/glasreinigung-frau-termin.jpg` | relURL}}')">
+  <h2 class="termin-title">Sie wollen Ihre Zeit anders nutzen?<br><span class="green-word">Kontaktieren</span> Sie uns jetzt</h2>
+  <form action="{{.Site.Params.contact.form_action}}" method="POST" class="row termin-form">
+    <div class="col-md-12">
+      <input type="text" id="name" name="name" placeholder="Name" class="form-control px-0 mb-4">
+    </div>
+    <div class="col-md-6">
+      <input type="text" id="telefon" name="telefon" placeholder="Telefonnummer" class="form-control px-0 mb-4">
+    </div>
+    <div class="col-md-6">
+      <input type="email" id="email" name="email" placeholder="Email Adresse" class="form-control px-0 mb-4">
+    </div>
+    <div class="col-12">
+      <textarea name="message" id="message" class="form-control px-0 mb-4"
+        placeholder="Geben Sie hier Ihre Anfrage ein"></textarea>
+    </div>
+    <div class="col-12">
+      <label class="form-text">
+        <input type="checkbox" name="zutat" value="salami">
+        Mit dem Absenden des Kontaktformulars erklären Sie sich mit der <a href="/datenschutz">Datenschutzbestimmungen</a> und <a href="/agb">Datenschutzbestimmungen</a> einverstanden.
+      </label>
+    </div>
+    <div class="col-lg-6 col-10 mx-auto">
+      <button class="btn btn-primary w-100">Absenden</button>
+    </div>
+  </form>
+  <div class="termin-aside">
+    <p class="termin-aside-text">Unser umfangreiches und vielseitiges Leistungsangebot richten wir nach Ihren Wünschen an.<br>Wir unterbreiten Ihnen gern ein kostenloses, unverbindliches Angebot.</p>
+    <button class="btn termin-telbtn1-3">0172 58 12 60 1</button>
+    <button class="btn termin-telbtn2-3">service@glasreinigungmitsystem.de</button>
+  </div>
+</section>
+<!-- /contact -->
+{{ end }}
+
+<!-- footer -->
+<div class="border-top text-center border-dark py-4 subline">
+  <p class="mb-0 text-light">{{ .Site.Params.copyright | markdownify }}</p>
+</div>
+</footer>
+<!-- /footer -->
+
+{{ "<!-- JS Plugins -->" | safeHTML }}
+{{ range .Site.Params.plugins.js}}
+<script src="{{ .URL | absURL }}"></script>
+{{ end }}
+
+{{ "<!-- Main Script -->" | safeHTML }}
+{{ $script := resources.Get "js/script.js" | minify}}
+<script src="{{ $script.Permalink }}"></script>
+
+{{ "<!-- google analytics -->" | safeHTML }}
+{{ with .Site.Params.google_analytics_id }}
+<script>
+  (function (i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date(); a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', '{{ . }}', 'auto');
+  ga('send', 'pageview');
+</script>
+{{ end }}

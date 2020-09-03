@@ -1,0 +1,53 @@
+{{ define "main" }}
+
+<!-- page title -->
+<section class="page-title-alt bg-primary position-relative overflow-hidden">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-white font-tertiary">Ueber Uns</h1>
+      </div>
+    </div>
+  </div>
+  <!-- background shapes -->
+
+</section>
+<!-- /page title -->
+
+<!-- about -->
+<section class="section pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h4> Professionelle Reinigung seit 1986</h2>
+          <p>Wir sind ein eingetragener Handwerksbetrieb, der sich auf die Reinigung von Glasoberflächen im privaten sowie geweblichen Bereich spezialisiert hat. Sie erwartet eine professionelle Fenster- reinigung für Privatkunden für Haus, Wohnung und Wintergarten sowie Gewerbekunden. Ob Schmutz, hartnäckiger Belag, Schimmel, Bakterien oder Vogelkot, bei unserer Glasreinigung erwartet Sie immer ein glänzendes Ergebnis.
+          <br>
+          <br>
+          Wir verwenden umweltfreundliche Reinigungsmittel und arbeiten auch mit <a href="https://de.wikipedia.org/wiki/Demineralisiertes_Wasser " target="_blank" >demineralisiertem Wasser</a>.
+          <br>  
+          <br>    
+          Die Kundenzufriedenheit ist unsere Grundbasis. Alle angebotenen Dienstleistungen werden gleichbleibend und in hoher Qualität und Service erbracht. Als moderner und innovativer Dienstleister bieten wir ein umfangreiches und vielfältiges Leistungsangebot, nach Ihren Wünschen an.
+          <br>
+          <br>
+          Unser Name steht für Professionalität und einwandfreien Service, für ein Ergebnis zufriedener Kunden.
+          </p>
+      </div>
+      
+  </div>
+</section>
+<!-- /about -->
+
+{{ if .Site.Data.about.clients_logo_slider.enable }}
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">{{ .Site.Data.about.clients_logo_slider.title | markdownify }}</h2>
+      </div>
+    </div>
+    {{ partial "client-slider.html" . }}
+  </div>
+</section>
+{{ end }}
+
+{{ end }}

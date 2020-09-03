@@ -1,6 +1,68 @@
-// Preloader js    
+
+// Preloader js 
 $(window).on('load', function () {
     $('.preloader').fadeOut(100);
+
+    
+    
+});
+
+if (window.location.origin == window.location.href ){
+    document.getElementsByClassName('navigation');
+    document.getElementsByClassName('navigation')[0].classList.add('notransition');
+
+}
+(function ($) {
+
+    $.fn.visible = function () {
+
+        var $element = $(this).eq(0),
+            $win = $(window),
+
+            elemTop = $element.position().top,
+            elemBottom = elemTop + $element.height(),
+
+            winTop = $win.scrollTop(),
+            winBottom = winTop + $win.height();
+
+        if (elemBottom < winTop) {
+            return false;
+        } else if (elemTop > winBottom) {
+            return false;
+        } else {
+            return true;
+        }        
+    };
+
+})(jQuery);
+const counters = document.querySelectorAll('.counter');
+const speed = 50; // The lower the slower
+
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const percent = counter.getAttribute('data-percentage');
+
+        const inc = target / speed;
+
+        if (count < target) {
+            // Add inc to count and output in counter
+            counter.innerText = Math.ceil(count + inc);
+           
+            // Call function every ms
+            setTimeout(updateCount, 25);
+        } else {
+            if(percent == 'true') { 
+                counter.innerText = target + "%";
+            } else {
+                counter.innerText = target;
+            }
+
+        }
+    };
+
+    updateCount();
 });
 
 (function ($) {
@@ -53,8 +115,6 @@ $(window).on('load', function () {
         var
             /* c1left = document.getElementById('l1').offsetLeft,
             c1top = document.getElementById('l1').offsetTop, */
-            c2left = document.getElementById('l2').offsetLeft,
-            c2top = document.getElementById('l2').offsetTop,
             c3left = document.getElementById('l3').offsetLeft,
             c3top = document.getElementById('l3').offsetTop,
             c4left = document.getElementById('l4').offsetLeft,
